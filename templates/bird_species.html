@@ -1,0 +1,350 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .nav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: blue;
+        }
+
+        .nav a.active {
+            color: red;
+            font-weight: bold;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            background-image: url('path_to_your_bird_image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: -50px auto 0;
+            position: relative;
+            top: 50px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .grid-item h3 {
+            margin: 10px 0 0;
+            color: #333;
+        }
+    </style>
+	<title>Bird species Detection</title>
+
+	<!--/tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Relief Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--//tags -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/static/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+
+	<link href="/static/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+	<link href="/static/css/fontawesome-all.css" rel="stylesheet">
+	<!-- //for bootstrap working -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class="top_header" id="home">
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="nav_top_fx_w3layouts_agileits">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+					<div class="logo_wthree_agile">
+						<h1><img src="../static/images/bicon.png" style="height:50px;" />
+							<a class="navbar-brand" href="/">
+								<i class="fas fa-bird" aria-hidden="true"></i> <span style="color:red">B</span><span style="color:green">i</span><span style="color:orangered">r</span><span style="color:rgb(60, 140, 6)">d</span>
+								<span class="desc" style="color:blueviolet;"><b>Species Detection</b> </span>
+							</a>
+						</h1>
+					</div>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<div class="nav_right_top">
+						<ul class="nav navbar-nav">
+							<a href="adminhome">Home</a>
+							<a href="add_bird_species">Add Bird Species</a>
+							<a href="addtips">Add Tips</a>
+							<a href="viewuser">View User</a>
+							<a href="qsbank">Question Bank</a>
+							<a href="viewsug">View Suggestion</a>
+							<a href="logout">Logout</a>
+						</ul>
+					</div>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+	</div>
+	<!-- banner -->
+	<div class="banner-inner-page">
+
+	</div>
+	<!--//banner -->
+	<!--/single-->
+	<div class="banner">
+        <!-- Background image of a bird -->
+    </div>
+    <div class="form-container"  style="position:absolute;top:410px;left:500px;">
+        <h2>Add Bird Species</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="des" placeholder="Description" rows="4" cols="50" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="voice">Voice</label>
+                <input type="file" id="voice" name="voice" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Now</button>
+            </div>
+        </form>
+    </div>
+    <div class="grid-container" style="position:absolute;top:880px;">
+        {% for i in data %}
+        <div class="grid-item">
+            <a href="click?uid={{i.0}}"><img src="static/uploads/{{i.1}}" alt="Bird 1"></a>
+            <h3>{{i.2}}</h3>
+        </div>
+        {% endfor %}
+    </div>
+	<!--//single-->
+	<!-- footer -->
+	
+	<!-- //footer -->
+	<script type="text/javascript" src="/static/js/jquery-2.2.3.min.js"></script>
+	<script src="/static/js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="/static/js/all.js"></script>
+	<script>
+		$('ul.dropdown-menu li').hover(function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+		}, function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+		});
+	</script>
+
+	<!-- js -->
+	<!-- script for responsive tabs -->
+	<script src="/static/js/easy-responsive-tabs.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+	<!--// script for responsive tabs -->
+	<!-- Smooth-Scrolling-JavaScript -->
+	<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript" src="/static/js/move-top.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll, .navbar li a, .footer li a").click(function (event) {
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //Smooth-Scrolling-JavaScript -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+
+
+	<a href="/static/#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+
+</html>

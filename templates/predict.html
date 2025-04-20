@@ -1,0 +1,265 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bird species Detection</title>
+
+	<!--/tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Relief Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--//tags -->
+	<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/static/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+
+	<link href="/static/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+	<link href="/static/css/fontawesome-all.css" rel="stylesheet">
+	<!-- //for bootstrap working -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class="top_header" id="home">
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="nav_top_fx_w3layouts_agileits">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+					<div class="logo_wthree_agile">
+						<h1><img src="../static/images/bicon.png" style="height:50px;" />
+							<a class="navbar-brand" href="/">
+								<i class="fas fa-bird" aria-hidden="true"></i> <span style="color:red">B</span><span style="color:green">i</span><span style="color:orangered">r</span><span style="color:rgb(60, 140, 6)">d</span>
+								<span class="desc" style="color:blueviolet;"><b>Species Detection</b> </span>
+							</a>
+						</h1>
+					</div>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<div class="nav_right_top">
+						<ul class="nav navbar-nav">
+							<li><a href="/userhome" class="active">Home</a></li>
+							<li><a href="/v_species">View Species</a></li>
+							<li><a href="/v_tips">View Tips</a></li>
+							<li><a href="/v_qst">View Question & Answer</a></li>
+							<li><a href="/add_sug">Add Suggestion</a></li>
+							<li><a href="/predict">Upload Sound</a></li>
+							<li><a href="/login">Logout</a></li>				
+						</ul>
+					</div>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="clearfix"></div>
+	</div>
+	<!-- banner -->
+	<div class="banner-inner-page">
+
+	</div>
+	<!--//banner -->
+	<!--/single-->
+	<div class="banner_bottom read_page">
+		<div class="container">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form method="post" enctype="multipart/form-data">
+					{% csrf_token %} 
+				<table class="table table-responsive">
+					<tr>
+						<td>
+							Title
+							<input type="text" name="t" class="form-control" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Choose File
+							<input type="file" name="up" class="form-control" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center><input type="submit" name="sub" value="ADD Now" class="btn btn-success" style="background-color:green; color:white; padding:5px;" /></center>
+						</td>
+					</tr>
+				</table>
+			</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+		<div class="container">
+			{%if data%}               
+                   {%for temp in data%}
+                    <div class="col-md-3"><center>
+						<b>{{temp.1}}</b><br />
+						<audio controls>
+							<source src="/static/audio/{{temp.2}}" type="audio/wav">
+							Your browser does not support the audio element.
+						  </audio>
+							<a href="/analysedata?fil={{temp.2}}" class="label label-danger">PREDICT NOW</a>
+							<a href="/del_sou?did={{temp.0}}" class="label label-danger">DELETE</a>
+						</center>
+					</div>
+					{%endfor%}
+			{%endif%}
+		</div>
+	</div>
+	<!--//single-->
+	<!-- footer -->
+	<div class="footer" id="contact">
+		<div class="footer_inner_info_wthree_agileits">
+			<!--/tabs-->
+			
+			<!--//tabs-->
+			<div class="clearfix"> </div>
+			<ul class="social-nav model-3d-0 footer-social social two">
+				<li>
+					<a href="/static/#" class="facebook">
+						<div class="front"><i class="fab fa-facebook-f" aria-hidden="true"></i></div>
+						
+					</a>
+				</li>
+				<li>
+					<a href="/static/#" class="twitter">
+						<div class="front"><i class="fab fa-twitter" aria-hidden="true"></i></div>
+						
+					</a>
+				</li>
+				<li>
+					<a href="/static/#" class="instagram">
+						<div class="front"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+						
+					</a>
+				</li>
+				<li>
+					<a href="/static/#" class="pinterest">
+						<div class="front"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+					
+					</a>
+				</li>
+			</ul>
+			<p class="copy-right">2018 © Relief. All rights reserved | Design by <a href="/static/http://w3layouts.com/">W3layouts</a></p>
+		</div>
+	</div>
+	<!-- //footer -->
+	<script type="text/javascript" src="/static/js/jquery-2.2.3.min.js"></script>
+	<script src="/static/js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="/static/js/all.js"></script>
+	<script>
+		$('ul.dropdown-menu li').hover(function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+		}, function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+		});
+	</script>
+
+	<!-- js -->
+	<!-- script for responsive tabs -->
+	<script src="/static/js/easy-responsive-tabs.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+	<!--// script for responsive tabs -->
+	<!-- Smooth-Scrolling-JavaScript -->
+	<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript" src="/static/js/move-top.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll, .navbar li a, .footer li a").click(function (event) {
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //Smooth-Scrolling-JavaScript -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+
+
+	<a href="/static/#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+
+</html>
